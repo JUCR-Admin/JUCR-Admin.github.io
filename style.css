@@ -1,16 +1,16 @@
-/* Reset & global rules */
+/* Root scroll + font reset */
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
   height: 100%;
+  overflow: hidden; /* 💥 Kills both horizontal and vertical scroll */
   background: #000;
   font-family: 'Segoe UI', sans-serif;
+  overscroll-behavior: none; /* Disables pull/bounce on mobile */
 }
 
-/* Background canvas */
+/* Full-screen canvas background */
 canvas {
   position: absolute;
   top: 0;
@@ -20,7 +20,7 @@ canvas {
   z-index: 0;
 }
 
-/* Centered logo + text */
+/* Centered content container */
 .center-content {
   position: absolute;
   top: 50%;
@@ -31,7 +31,7 @@ canvas {
   z-index: 2;
 }
 
-/* Logo increased ~2x */
+/* Enlarged, glowing logo */
 .logo {
   width: 80vw;
   max-width: 360px;
@@ -39,17 +39,17 @@ canvas {
   animation: glow-breath 5s ease-in-out infinite;
 }
 
-/* Coming Soon text - thin font & smaller */
+/* Thin, smaller "Coming Soon" text */
 .coming-soon {
   color: #fff;
-  margin-top: 0px;
+  margin-top: 20px;
   font-size: 1.2rem;
-  font-weight: 200; /* thin */
+  font-weight: 200;
   letter-spacing: 2px;
   word-wrap: break-word;
 }
 
-/* Glowing breathing animation */
+/* Glow pulse animation */
 @keyframes glow-breath {
   0%, 100% {
     filter: drop-shadow(0 0 2px #ffffff)
