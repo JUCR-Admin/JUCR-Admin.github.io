@@ -1,42 +1,55 @@
+/* Reset & global rules */
 html, body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
   height: 100%;
   background: #000;
   font-family: 'Segoe UI', sans-serif;
 }
 
+/* Background canvas */
 canvas {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: 0;
 }
 
+/* Centered logo + text */
 .center-content {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 2;
+  max-width: 90vw;
   text-align: center;
+  z-index: 2;
 }
 
+/* Logo increased ~2x */
 .logo {
-  width: 500px;
+  width: 80vw;
+  max-width: 360px;
   height: auto;
   animation: glow-breath 5s ease-in-out infinite;
 }
 
+/* Coming Soon text - thin font & smaller */
 .coming-soon {
   color: #fff;
   margin-top: 0px;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  font-weight: 200; /* thin */
   letter-spacing: 2px;
+  word-wrap: break-word;
 }
 
-/* 🔆 Glowing breathing animation */
+/* Glowing breathing animation */
 @keyframes glow-breath {
   0%, 100% {
     filter: drop-shadow(0 0 2px #ffffff)
